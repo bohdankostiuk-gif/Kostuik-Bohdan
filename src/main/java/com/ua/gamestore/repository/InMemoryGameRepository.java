@@ -22,6 +22,14 @@ public class InMemoryGameRepository implements GameRepository {
     }
 
     @Override
+    public List<Game> findByGenre(String genre) {
+        return storage.values()
+                .stream()
+                .filter(game -> genre.equalsIgnoreCase(game.getGenre()))
+                .toList();
+    }
+
+    @Override
     public Optional<Game> findById(Long id) {
         return Optional.ofNullable(storage.get(id));
     }
@@ -33,5 +41,10 @@ public class InMemoryGameRepository implements GameRepository {
         }
         storage.put(game.getId(), game);
         return game;
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        return storage.remove(id) != null;
     }
 }

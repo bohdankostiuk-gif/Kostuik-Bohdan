@@ -3,6 +3,7 @@ package com.ua.gamestore.service.mapper;
 import com.ua.gamestore.domain.Game;
 import com.ua.gamestore.web.dto.GameCardDto;
 import com.ua.gamestore.web.dto.GameDetailDto;
+import com.ua.gamestore.web.dto.GameRequest;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,5 +32,19 @@ public class GameMapper {
                 game.getDescription(),
                 game.getAgeRating()
         );
+    }
+
+    public Game toDomain(GameRequest request) {
+        Game game = new Game();
+        game.setTitle(request.title());
+        game.setStudio(request.studio());
+        game.setPlatform(request.platform());
+        game.setGenre(request.genre());
+        game.setReleaseYear(request.releaseYear());
+        game.setPrice(request.price());
+        game.setPosterUrl(request.posterUrl());
+        game.setDescription(request.description());
+        game.setAgeRating(request.ageRating());
+        return game;
     }
 }
