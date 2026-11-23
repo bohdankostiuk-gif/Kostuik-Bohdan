@@ -3,6 +3,7 @@
 Запуск сервера (потрібна Java 21):
 
 ```bash
+cd gamestore-gz12
 ./mvnw spring-boot:run
 ```
 

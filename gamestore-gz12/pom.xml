@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ua</groupId>
-	<artifactId>gamestore</artifactId>
+	<artifactId>gamestore-gz12</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gamestore</name>
+	<name>gamestore-gz12</name>
 	<description>Game store project</description>
 	<url/>
 	<licenses>
